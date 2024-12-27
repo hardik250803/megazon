@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block scripts %}
+<script>
+    setup();
+    let udata = {};
+    if ({{ newCust | tojson }} == false) {
+        udata = {{ udata | tojson }};
+        updatePage();
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="m-4 p-5 d-flex flex-row align-items-center justify-content-center bg-light border border-dark rounded">
+    <div class="d-flex align-items-center flex-column d-none" id="uimage" style="width:fit-content;">
+        <img style="height: 10rem;width: 10rem;margin: 2rem;" src="../static/images/person.png" alt="user image"/><br>
+        <button class="btn btn-danger" onclick="{
+            window.location.href = `/profile?id=${udata['uid']}`;
+        }">Profile</button>
+    </div>
+    <div>
+        <h2>Welcome To Megazon <span id="uname"></span></h2>
+        <p class="lead">Megazon is an Online Shoppingmart Where Customers Can Buy Varieties Of Products.</p>
+        <p>Megazon Has 5 Categories of Products Which Are <b>Electronics, Furniture, Sports, Travel, Cloths</b>. We Also Offer Great Discounts and Provide Best After Sales Services.</p>
+    </div>
+</div>
+
+<div id="recomCard" class="card d-none bg-danger text-white col mb-5">
+    <h2 class="card-header">Recommended Products</h2>
+    <div class="card-body">
+        <div class="row prod-row" id="Recom_Container"></div>
+    </div>
+</div>
+
+<div class="card bg-primary text-white col mb-5">
+    <h2 class="card-header">New Electronics</h2>
+    <div class="card-body">
+        <div class="row prod-row" id="Electronics_Container"></div>
+    </div>
+</div>
+
+<div class="card bg-primary text-white col mb-5">
+    <h2 class="card-header">New Furnitures</h2>
+    <div class="card-body">
+        <div class="row prod-row" id="Furniture_Container"></div>
+    </div>
+</div>
+
+<div class="card bg-primary text-white col mb-5">
+    <h2 class="card-header">New Sports</h2>
+    <div class="card-body">
+        <div class="row prod-row" id="Sports_Container"></div>
+    </div>
+</div>
+
+<div class="card bg-primary text-white col mb-5">
+    <h2 class="card-header">New Travels</h2>
+    <div class="card-body">
+        <div class="row prod-row" id="Travel_Container"></div>
+    </div>
+</div>
+
+<div class="card bg-primary text-white col mb-5">
+    <h2 class="card-header">New Cloths</h2>
+    <div class="card-body">
+        <div class="row prod-row" id="Cloths_Container"></div>
+    </div>
+</div>
+
+{% endblock %}

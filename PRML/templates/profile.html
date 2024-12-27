@@ -1,0 +1,40 @@
+﻿{% extends "layout.html" %}
+
+{% block scripts %}
+<script>
+    let udata = {{ udata | tojson }};
+    updateProfilePage();
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="card mt-4 bg-light border border-danger">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="../static/images/person.png" class="img-fluid border border-danger rounded m-3" alt="user image">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body ms-3">
+                <h5 id="uname" class="card-title">Card title</h5>
+                <b>Customer Id : </b><span id="uid"></span><br>
+                <b>DOB : </b><span id="dob"></span><br>
+                <b>Gender : </b><span id="gen"></span><br>
+                <b>Email : </b><span id="email"></span><br>
+                <b>Phone No. : </b><span id="pn"></span><br>
+                <b>Address : </b><span id="adrs"></span><br>
+                <b>Membership : </b><span id="memb"></span><br>
+                <b>Favorite : </b><span id="fav"></span><br><br>
+                <form action="/logout" method="post">
+                    <input type="submit" class="btn btn-danger" value="Log Out"/>
+                </form>
+                <p class="card-text">
+                    <small class="text-body-secondary">Last Login On <span id="llogin"></span></small><br>
+                    <small class="text-body-secondary">Last Purchase On <span id="lpur"></span></small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

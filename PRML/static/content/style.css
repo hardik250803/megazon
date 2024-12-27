@@ -1,0 +1,29 @@
+.prod-cyan{
+    filter: hue-rotate(190deg);
+}
+
+.prod-green {
+    filter: hue-rotate(145deg);
+}
+
+.prod-blue {
+    filter: hue-rotate(225deg);
+}
+
+.prod-white {
+    filter: grayscale(1) invert(1);
+}
+
+.prod-yellow {
+    filter: hue-rotate(70deg);
+}
+
+.prod-purple {
+    filter: hue-rotate(290deg);
+}
+
+.prod-row{
+    overflow: auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
